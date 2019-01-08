@@ -38,12 +38,12 @@ export class Dog extends Component {
           <p className='Dog-breed'>{dog.zip_code}</p>
         </div>
         <div className='Dog-body'>
-          <small>{dog.description_of_dog}</small>
+          <p>{dog.description_of_dog}</p>
           <p>{this.getOwnerName(dog.first_name, dog.last_name)}</p>
           <p>{`${dog.address}, ${dog.zip_code}`}</p>
         </div>
         <div className='Dog-footer'>
-          <p className='Dog-action'>Dog Action</p>
+          <button className='Dog-action'>Dog Action</button>
         </div>
       </div>
     )
