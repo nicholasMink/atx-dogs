@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Dog from './Dog/Dog'
 import './Dogs.scss'
+import Spinner from '../SVG/Spinner';
+import Loader from '../../styled/Loader';
 
 export class Dogs extends Component {
   constructor(props) {
@@ -54,11 +56,12 @@ export class Dogs extends Component {
       zipCodes,
       isLoading,
     } = this.state
-    if (isLoading) return <p>Loading</p>
+    if (isLoading) return <Loader><div><Spinner /></div></Loader>
     return (
       <div className='Dogs-wrapper'>
       <div className='Dogs-filter'>
-        <select onChange={this.getDogs.bind(this)}>
+        <label htmlFor='zipCodes'>Filter by Zip Code</label>
+        <select id='zipCodes' onChange={this.getDogs.bind(this)}>
           <option value='all'>All</option>
           {
             Object.entries(zipCodes).map(zip => <option key={zip[0]} value={zip[0]}>{`${zip[0]} (${zip[1]})`}</option> )

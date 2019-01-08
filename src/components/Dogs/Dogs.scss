@@ -10,14 +10,20 @@
     flex-grow: 1;
     width: 100%;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     margin-bottom: 1rem;
 
+    label,
     select {
-      min-width: 9rem;
+      align-self: center;
+      width: 9rem;
       font-size: 1.3rem;
       text-indent: .3rem;
       padding: 0.3rem 0;
+    }
+    label {
+      font-size: .9rem;
     }
   }
 }
